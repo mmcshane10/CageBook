@@ -2,47 +2,31 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 function NavBar() {
+  var navStyle = {
+    height: '100%',
+    position: 'fixed',
+    left: '0',
+    overflowX: 'hidden',
+    backgroundColor: '#537ec5',
+    marginLeft: '2%',
+    padding: '1%',
+    color: '#1b2a49'
+  }
+
+  var btnStyle = {
+    backgroundColor: '#f39422'
+  }
+
   return (
-    <div>
-      <style jsx>{`
-        div {
-          height: 40px;
-        }
-        .btn {
-          background-color: white;
-          border: solid thin gray;
-          border-radius: 0%;
-        }
-        li {
-          float: left;
-        }
-        li:hover {
-          cursor: pointer;
-        }
-        input {
-          float: right;
-          border-radius: 20px;
-          border: solid 2px blue;
-          height: 40px;
-          width: 250px;
-          margin-right: 20px;
-        }
-        .tweet {
-          float: right;
-          margin-right: 20px;
-          border-radius: 20px;
-          border: solid 2px blue;
-        }
-        
-      `}</style>
+    <div style={navStyle}>
       <ul>
-        <li className="btn">Home</li>
-        <li className="btn"><Link to= '/addfriend'>Add Friend</Link></li>
-        <li className="btn">Messages</li>
+        <li className=""><Link to='/'>Home</Link></li>
+        <li className=""><Link to='/addfriend'>Add Friend</Link></li>
+        <li className="">Messages</li>
       </ul>
       <form>
-        <button className='btn tweet'>Post</button>
-        <input type="text" placeholder="What's on your mind?"/>
+        <input type="text" placeholder="What's on your mind?" />
+        <button style={btnStyle} className='btn tweet'>Post</button>
       </form>
     </div>
   );

@@ -16,45 +16,24 @@ class App extends React.Component {
   }
 
   handleAddingFriendToList(newFriend) {
-    var newMasterFriendsList = this.state.masterFriendsList.slice();
-    newMasterFriendsList.push(newFriend);
-    this.setState({ masterFriendsList: newMasterFriendsList });
+    var newMasterFriendList = this.state.masterFriendList.slice();
+    newMasterFriendList.push(newFriend);
+    this.setState({ masterFriendList: newMasterFriendList });
   }
 
+  
   render() {
     return (
       <div>
-        <style jsx>{`
-          .flex-container {
-            display: flex;
-            align-items: stretch;
-          }
-          .contentContainer {
-            margin: 10px;
-            text-align: center;
-            font-size: 30px;
-          }
-          .flexLeft {
-            flex-grow: 3;
-          }
-  
-          .flexRight {
-            flex-grow: 9;
-          }
-          FriendList {
-           width: 100%; 
-          }
-  
-        `}</style>
         <Header />
-        <div className='flex-container'>
-          <div className='contentContainer flexLeft'>
+        <div className='row'>
+          <div className='col s3'>
             <NavBar />
           </div>
-          <div className='contentContainer flexRight'>
+          <div className='col s9'>
             <Switch>
               <Route exact path='/' render={() => <Feed feed={this.state.masterFriendList} />} />
-              <Route path='/addfriend' render={() => <AddFriend onAddFriendCreation={this.handleAddingFriendToList} />} />
+              <Route path='/addfriend' render={() => <AddFriend onNewFriendCreation={this.handleAddingFriendToList} />} />
             </Switch>
           </div>
         </div>
