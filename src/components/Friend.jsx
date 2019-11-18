@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Friend(props) {
+function Friend(props){
   return (
     <div>
       <style jsx>
@@ -13,7 +13,6 @@ function Friend(props) {
             margin-top: 10%;
             border-radius: 5px;
           }
-
           .card {
             margin-bottom 5px;
             background-color: green;
@@ -26,10 +25,10 @@ function Friend(props) {
         `}
       </style>
       <div className='card'>
-        <img src={props.imgURL} className='card-img-top' alt='Nic Cage'/>
+        <img src={props.imgURL} className='card-img-top' alt='Nic Cage' />
         <div className='card-body'>
           <h5 className='card-title'>{props.name}</h5>
-          <p className='card-text'>{props.bio}</p>
+          <p className='card-text'>{props.tweet}</p>
           <a href='#' className='btn btn-primary'>Follow</a>
         </div>
       </div>
@@ -37,9 +36,9 @@ function Friend(props) {
   );
 }
 
-Friend.PropTypes = {
+Friend.propTypes = {
   name: PropTypes.string,
-  bio: PropTypes.string,
+  tweet: PropTypes.string,
   imgURL: PropTypes.string
 };
 
