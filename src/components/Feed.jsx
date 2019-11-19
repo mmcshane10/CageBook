@@ -3,11 +3,8 @@ import Friend from './Friend';
 import PropTypes from 'prop-types';
 
 function Feed(props){
-  var feedStyle = {
-    backgroundColor: 'white'
-  }
   return (
-    <div style={feedStyle}>
+    <div className='row'>
       {props.feed.map((friend) =>
         <Friend
           name = {friend.name}

@@ -41,17 +41,17 @@ function AddFriend(props) {
         <input 
           type='text'
           id='name'
-          placeholder='Friend Name'
+          placeholder='Name'
           ref={(input) => {_name = input;}}/>
         <input
           type='text'
           id='tweet'
-          placeholder='Friend Tweet'
+          placeholder='Quote'
           ref={(input) => {_tweet = input;}}/>
         <input
           type='text'
           id='imgURL'
-          placeholder='URL'
+          placeholder='Image URL'
           ref={(input) => {_imgURL = input;}}/>
           <button className='btn' style={btnStyle}><a target="_blank" href='https://www.google.com/search?q=nicolas+cage&rlz=1C5CHFA_enUS876&source=lnms&tbm=isch&sa=X&ved=0ahUKEwiT-aiw5vTlAhW5JjQIHZ_CDR8Q_AUIEygC&biw=2080&bih=1288'>Upload Photo</a></button>
           <button className='btn' style={btnStyle} type='submit'>Add</button>

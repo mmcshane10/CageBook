@@ -20,7 +20,6 @@ class App extends React.Component {
     newMasterFriendList.push(newFriend);
     this.setState({ masterFriendList: newMasterFriendList });
   }
-
   
   render() {
     return (
