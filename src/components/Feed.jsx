@@ -10,6 +10,10 @@ function Feed(props){
           name = {friend.name}
           tweet = {friend.tweet}
           imgURL = {friend.imgURL}
+          likes = {friend.likes}
+          onAddingLike = {props.onAddingLike}
+          onRemovingLike = {props.onRemovingLike}
+          id = {friend.id}
           key = {friend.id}
         />
       )}
@@ -18,7 +22,10 @@ function Feed(props){
 }
 
 Feed.propTypes = {
-  feed: PropTypes.array
+  feed: PropTypes.array,
+  onAddingLike: PropTypes.func,
+  onRemovingLike: PropTypes.func
 };
+
 
 export default Feed;

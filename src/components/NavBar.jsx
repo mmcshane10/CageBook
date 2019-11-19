@@ -11,11 +11,11 @@ function NavBar() {
     marginLeft: '2%',
     padding: '1%',
     color: '#1b2a49',
-  }
+  };
 
   var btnStyle = {
     backgroundColor: '#f39422'
-  }
+  };
 
   return (
     <div style={navStyle}>

@@ -11,41 +11,42 @@ class AddFriend extends React.Component {
       _name: null,
       _imgURL: null,
       toHome: false
-    }
+    };
     this.handleAddFriendSubmission = this.handleAddFriendSubmission.bind(this);
   }
 
   handleAddFriendSubmission(event) {
     console.log(this.state._name.value);
     event.preventDefault();
-    this.props.onNewFriendCreation({ name: this.state._name.value, tweet: this.state._tweet.value, imgURL: this.state._imgURL.value, id: v1() });
+    this.props.onNewFriendCreation({ name: this.state._name.value, tweet: this.state._tweet.value, imgURL: this.state._imgURL.value, likes: 0, id: v1() });
     this.state._name.value = '';
     this.state._tweet.value = '';
     this.state._imgURL.value = '';
-    this.setState({ toHome: true })
+    this.setState({ toHome: true });
   }
 
   render() {
     var formStyle = {
       backgroundColor: '#537ec5'
-    }
+    };
     var btnStyle = {
       backgroundColor: '#f39422',
       float: 'right',
       marginTop: '10px',
       marginLeft: '3px',
       textDecoration: 'none'
-    }
+    };
     var inputStyle = {
       paddingLeft: '15px'
-    }
+    };
 
-    if (this.state.toHome === true) {
-      return <Redirect to='/' />
-    }
+    // if (this.state.toHome === true) {
+    //   return <Redirect to='/' />;
+    // }
 
     return (
       <div style={formStyle}>
+        {this.state.toHome ? <Redirect to='/' /> : ""}
         <form style={inputStyle} onSubmit={this.handleAddFriendSubmission}>
           <input
             type='text'
