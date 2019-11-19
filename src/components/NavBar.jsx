@@ -10,7 +10,7 @@ function NavBar() {
     backgroundColor: '#537ec5',
     marginLeft: '2%',
     padding: '1%',
-    color: '#1b2a49'
+    color: '#1b2a49',
   }
 
   var btnStyle = {

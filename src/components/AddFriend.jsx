@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { v1 } from 'uuid';
-import { Link } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
 function AddFriend(props) {
   let _name = null;
@@ -9,15 +9,13 @@ function AddFriend(props) {
   let _imgURL = null;
 
   function handleAddFriendSubmission(event) {
-    console.log(_name.value);
-    console.log(_tweet.value);
-    console.log(_imgURL.value);
     event.preventDefault();
+    console.log(_name.value);
     props.onNewFriendCreation({name: _name.value, tweet: _tweet.value, imgURL: _imgURL.value, id: v1()});
     _name.value = '';
     _tweet.value = '';
     _imgURL.value = '';
-  }
+   }
   
   var formStyle = {
       backgroundColor: '#537ec5'
@@ -34,7 +32,6 @@ function AddFriend(props) {
   var inputStyle = {
       paddingLeft: '15px'
   }
-
   return (
     <div style={formStyle}>
       <form style={inputStyle} onSubmit={handleAddFriendSubmission}>
@@ -54,7 +51,7 @@ function AddFriend(props) {
           placeholder='Image URL'
           ref={(input) => {_imgURL = input;}}/>
           <button className='btn' style={btnStyle}><a target="_blank" href='https://www.google.com/search?q=nicolas+cage&rlz=1C5CHFA_enUS876&source=lnms&tbm=isch&sa=X&ved=0ahUKEwiT-aiw5vTlAhW5JjQIHZ_CDR8Q_AUIEygC&biw=2080&bih=1288'>Upload Photo</a></button>
-          <button className='btn' style={btnStyle} type='submit'>Add</button>
+        <button className='btn' style={btnStyle} type='submit'>Add</button>
       </form>
     </div>
   );
