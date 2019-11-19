@@ -8,10 +8,6 @@ function Friend(props) {
     padding: '20px'
   };
 
-  var textStyle = {
-    marginLeft: '20px'
-  };
-
   var likesStyle = {
     display: 'flex',
     justifyContent: 'center'
@@ -58,6 +54,7 @@ Friend.propTypes = {
   likes: PropTypes.number,
   onAddingLike: PropTypes.func,
   onRemovingLike: PropTypes.func,
+  id: PropTypes.string
 };
 
 export default Friend;
