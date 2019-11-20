@@ -10,12 +10,11 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      masterFriendList: []
+      masterFriendList: [],
     };
     this.handleAddingFriendToList = this.handleAddingFriendToList.bind(this);
     this.handleAddingLike = this.handleAddingLike.bind(this);
     this.handleRemovingLike = this.handleRemovingLike.bind(this);
-
   }
 
   handleAddingFriendToList(newFriend) {
@@ -25,7 +24,7 @@ class App extends React.Component {
   }
 
   handleAddingLike(searchId){
-    var newMasterFriendList = this.state.masterFriendList.slice();
+    var newMasterFriendList = this.state.masterFriendList;
     for(let i =0; i < newMasterFriendList.length; i++)
     {
       if(newMasterFriendList[i].id == searchId)
